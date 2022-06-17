@@ -1,0 +1,46 @@
+.wrapper {
+    border: 3px solid #213838;
+    display: inline-block;
+    border-radius: 10%;
+}
+
+.buttonWrapper {
+    display: flex;
+    border: 3px solid #213838;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.scoreboardWrapper {
+    border: 3px solid #213838;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.scoreboard {
+    color: #fff;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.full {
+    color: red;
+}
+
+.button {
+    margin: 2px;
+    background-color: darkslategray;
+    color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid #213838;
+}
+
+.button:disabled {
+    color: red;
+    cursor: pointer;
+    opacity: 50%;
+}
