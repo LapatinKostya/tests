@@ -1,16 +1,13 @@
-body {
-    background-color: grey;
-    color: white;
+* {
+    box-sizing: border-box;
 }
-.app {
-    width: 100%;
-    height: auto;
+
+body {
+    background-color: #2a2c36;
+}
+.wrapper {
+    color: #7fcce3;
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
-div {
-    padding: 2%;
-}
-
