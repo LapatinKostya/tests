@@ -1,0 +1,14 @@
+.wrapper {
+
+}
+.button {
+    color: #2d2d37;
+    background-color: #65dafe;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.error {
+    background-color: #437285;
+}

@@ -1,13 +1,6 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #2a2c36;
-}
-.wrapper {
-    color: #7fcce3;
+.App {
+    height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center
 }
