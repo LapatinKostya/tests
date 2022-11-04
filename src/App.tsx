@@ -6,22 +6,26 @@ function App() {
 
     const [start, setStart] = useState(0)
     const [max, setMax] = useState(5)
-    const [count, setCount] = useState(start)
+    const [count, setCount] = useState(0)
     const [error, setError] = useState(start >= max)
-    const [settingMode, setSettingMode] = useState(true)
+    const [settingMode, setSettingMode] = useState(false)
 
     useEffect(() => {
-        let valueAsString = localStorage.getItem("startValue")
-        if (valueAsString) {
-            let newValue = JSON.parse(valueAsString)
+        let startValueAsString = localStorage.getItem("startValue")
+        if (startValueAsString) {
+            let newValue = JSON.parse(startValueAsString)
             setStart(newValue)
+            setCount(newValue)
         }
     }, [])
 
     useEffect(() => {
-        localStorage.setItem("startValue", JSON.stringify(start))
-    }, [start])
-
+        let maxValueAsString = localStorage.getItem("maxValue")
+        if (maxValueAsString) {
+            let newValue = JSON.parse(maxValueAsString)
+            setMax(newValue)
+        }
+    }, [])
 
     const resetCount = () => {
         setCount(start)
@@ -41,6 +45,8 @@ function App() {
         setCount(start)
         setError(start >= max)
         setSettingMode(!settingMode)
+        localStorage.setItem("startValue", JSON.stringify(start))
+        localStorage.setItem("maxValue", JSON.stringify(max))
     }
 
     return (
