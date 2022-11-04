@@ -1,20 +1,46 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {Counter} from "./Counter/Counter";
 
 function App() {
-    const [count, setCount] = useState(0)
-    const [error, setError] = useState(false)
 
-    const resetCount = ()=> {
-        setCount(0)
-        setError(false)
-    }
-    const incCount = ()=> {
-        if (count>= 4) {
-            setError(true)
+    const [start, setStart] = useState(0)
+    const [max, setMax] = useState(5)
+    const [count, setCount] = useState(start)
+    const [error, setError] = useState(start >= max)
+    const [settingMode, setSettingMode] = useState(true)
+
+    useEffect(() => {
+        let valueAsString = localStorage.getItem("startValue")
+        if (valueAsString) {
+            let newValue = JSON.parse(valueAsString)
+            setStart(newValue)
         }
-        setCount(count + 1)
+    }, [])
+
+    useEffect(() => {
+        localStorage.setItem("startValue", JSON.stringify(start))
+    }, [start])
+
+
+    const resetCount = () => {
+        setCount(start)
+        setError(start >= max)
+    }
+
+    const incCount = () => {
+        if (!error) {
+            if (count >= max - 1) {
+                setError(true)
+            }
+            setCount(count + 1)
+        }
+    }
+
+    const setStartCount = () => {
+        setCount(start)
+        setError(start >= max)
+        setSettingMode(!settingMode)
     }
 
     return (
@@ -24,6 +50,13 @@ function App() {
                 reset={resetCount}
                 plusCount={incCount}
                 error={error}
+                settingMode={settingMode}
+                start={start}
+                setStart={setStart}
+                max={max}
+                setMax={setMax}
+                setError={setError}
+                setSettingMode={setStartCount}
             />
         </div>
     );

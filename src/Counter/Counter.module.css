@@ -15,5 +15,13 @@
     align-items: center;
     justify-content: space-around;
     height: 60px;
-
+}
+.display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    box-sizing: border-box;
+    border: 5px solid #65dafe;
+    border-radius: 10px;
+    height: 60%;
 }

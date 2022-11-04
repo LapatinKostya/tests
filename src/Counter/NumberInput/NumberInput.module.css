@@ -1,0 +1,21 @@
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.inputNumber {
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    width: 40%;
+    border: 2px solid #65dafe;
+    border-radius: 2px;
+    outline: none;
+}
+.title {
+    color: #65dafe;
+}
+.inputError {
+    border: 2px solid red;
+    background-color: #e08b8b;
+}
